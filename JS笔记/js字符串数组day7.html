@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+</style>
+</head>
+
+<body>
+<div id="" class="clock">
+	<span id="sid">
+		提交成功，<span id='pid'>3</span>秒后跳转
+	</span>
+	<button id='bid'>立即停止</button>
+</div>
+</body>
+<script>
+str='/web/home/linux.php';
+//alert(str.length);
+//alert(str.indexOf('/'));
+//alert(str.lastIndexOf('/'));
+//alert(str.substr(1,5));
+pos=str.lastIndexOf('/');
+//截取目录
+dir=str.substr(0,pos);
+alert(dir);
+//截取文件名
+file=str.substr(pos+1);
+alert(file);
+//截取后缀
+pos=str.lastIndexOf('.');
+ext=str.substr(pos+1);
+alert(ext);
+//split
+n1='index.inc.class.php';
+arr=n1.split('.');
+l=arr.length;
+alert(arr);
+alert(arr[l-1]);
+//或者
+//val=arr.pop();
+//alert('将最后一个抠出来->'+val);
+//从1开始到3，但不包括3
+newArr=arr.slice(1,3);
+alert(newArr);
+re=arr.slice(3);
+alert(re);
+//slice截取结果为数组对象
+alert(typeof(re)+'数组对象，不能用于连接');
+//所以结果输出可以为
+alert(re[0]+':数组第一个');
+alert(re[0]+'此时re[0]为字符串，可以用于连接');
+//截取最后一个
+temp=arr.slice(-1);
+alert('用-1来截取最后一个'+temp);
+//字符串的slice
+alert(n1.slice(6,9)+':字符串的slice');
+</script>
+</html>

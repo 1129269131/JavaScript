@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+#div1{
+position: absolute;
+top: 0px;
+left: 0px;
+}
+</style>
+</head>
+
+<body>
+	<div id="div1">
+		<img src="a1.png" />
+	</div>
+</body>
+<script>
+function drag(obj){
+	obj.bind("mousedown",start);
+	function start(event){
+		deltaX = event.clientX-obj.offset().left;
+		deltaY = event.clientY-obj.offset().top;
+		
+		$(document).bind("mousemove",move);
+		$(document).bind("mouseup",stop);
+		return false;//阻止默认行为 防止事件冒泡
+	}
+	function move(event){
+		obj.css({
+			"left":(event.clientX-deltaX)+"px",
+			"top":(event.clientY-deltaY)+"px"
+		})
+		return false;//阻止默认行为 防止事件冒泡
+	}
+	function stop(){
+		$(document).unbind("mousemove",move);
+		$(document).unbind("mouseup",stop);
+	}
+}
+   obj5=$("#div1");
+drag(obj5);
+
+//了解鼠标点击是左键还是右键还是滚轮
+//$(document).mousedown(
+//	function(event){
+//		code=event.button;
+//		alert(code);
+//	}
+//);
+</script>
+</html>

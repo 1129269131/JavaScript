@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8" />
+<title>background-attachment_CSS参考手册_web前端开发参考手册系列</title>
+<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+<style>
+*{margin: 0;padding: 0;}
+.clearfix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clearfix { *zoom:1;}
+a {
+  text-decoration: none;
+}
+li{list-style:none}
+</style>
+<script type="text/javascript">
+function hasGetUserMedia() {
+  return !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);	
+}
+if(hasGetUserMedia()){
+  alert('您的浏览器支持getUserMedia方法');	
+} else {
+  alert('您的浏览器不支持getUserMedia方法');	
+}
+</script>
+</head>
+<body>
+<video id="myVideo" width="400" height="300" autoplay></video>
+<script type="text/javascript">
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || window.navigator.mozGetUserMedia;
+  window.URL = window.URL || window.webkitURL;
+  var video = document.getElementById('myVideo');
+  navigator.getUserMedia({video: true, audio: false},function(stream){
+	  
+  },
+	function(err){
+	  console.log(err);	
+	} );
+</script>
+</body>
+</html>
+			

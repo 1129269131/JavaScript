@@ -1,0 +1,33 @@
+09. 尚硅谷_JS模块化规范_ES6规范_基本使用 10分钟左右
+安装babel-cli, babel-preset-es2015和browserify		//cli: command line interface
+  * npm install babel-cli browserify -g 
+  * npm install babel-preset-es2015 --save-dev 
+  * preset 预设(将es6转换成es5的所有插件打包)
+  
+.babelrc 文件 	rc: run control运行时控制文件
+
+09. 尚硅谷_JS模块化规范_ES6规范_基本使用 20分钟左右
+编译
+  * 使用Babel将ES6编译为ES5代码(但包含CommonJS语法) : babel js/src -d js/lib
+  * -d 左侧：要转的文件所在的目录	-d 右侧：输出的文件以及目录
+  * 使用Browserify编译js : browserify js/lib/app.js -o js/lib/bundle.js
+  
+下载jquery
+	* npm install jquery	: 不指定版本，默认下载最新的版本
+  * npm install jquery@1 : 下载1.几的最新版本
+  * npm install jquery@1.11 : 下载1.11里的最新版本
+  * npm install jquery@1.11.3 : 指定死版本
+补充：使用打包处理js命令(browserify js/lib/app.js -o js/lib/bundle.js)之前必须下载好：
+		a、全局: npm install browserify -g
+		b、局部: npm install browserify --save-dev
+		c、c、通过命令创建packageJSON.txt
+			1、当前文件夹cmd
+			2、输入npm init
+			3、重写包名(小写)
+			4、一顿回车
+
+		
+常规暴露:
+	1、分别暴露
+	2、统一暴露
+默认暴露

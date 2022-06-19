@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+	<div>
+		<img src='a1.png' id='dogid'>
+	</div>
+</body>
+<script>
+	//1 传统定义函数方法
+	function say(){
+		alert('我是正经函数');
+	}
+	//2
+	say=function say(){
+		alert('我是函数');
+	}
+	//3匿名定义函数方法
+	say=function(){
+		alert('我是匿名函数');
+	}
+	say();
+	//NaN 	not a number
+	str='10abc';
+	tot=Number(str)+5;
+	alert(tot);
+	//在JS中只有在函数里面带var的是局部变量，其余全是全局变量!
+	temp=10;
+	var temp2=20;
+	function run(){
+		var temp3='局部变量';
+		temp4='全局变量'
+		alert(temp+temp2);
+		alert(temp3+'函数内');
+	}
+	run();
+	alert(temp4);
+	alert(temp3);
+</script>
+</html>

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#img{
+		width: 192px;
+		height: 192px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#img img{
+		display: block;
+	}
+</style>	
+	
+</head>
+
+<body>
+<form id='fid' action='go.php'>
+<p>用户名:</p>
+<p><input type='text' id='ipt' value='用户名'/></p>
+<p>密码:</p>
+<p><input type='text' value='123456'/></p>
+<p><input type='submit' value='ok'/><input type='reset' value='Cancel'/></p>
+</form>
+<form>
+	<p>选择城市:</p>
+	<p>
+		<select id='s1' name=''>
+			<option value=''>选择城市</option>
+			<option value='北京'>北京</option>
+			<option value='上海'>上海</option>
+			<option value='广东'>广东</option>
+		</select>
+	</p>
+<h2>请确认您选择的城市:<span id='s2'>太原</span></h2>
+</form>
+</body>
+<script>
+iptobj=document.getElementById('ipt');
+//iptobj.onfocus=function(){
+//	this.style.outlineColor='#f00';
+//	this.value='';
+//}
+//iptobj.onfocus=function(){
+//	this.select();
+//}
+//iptobj.onblur=function(){
+//	val=this.value;
+//	if(val.length<6){
+//		alert('用户名至少6位!');
+//	}
+//}
+//iptobj.onchange=function(){
+//	alert('88');
+//}
+iptobj.onselect=function(){
+	this.value='user1';
+}
+s1obj=document.getElementById('s1');
+s2obj=document.getElementById('s2');
+s1obj.onchange=function(){
+	s1val=this.value;
+	s2obj.innerHTML=s1val;
+}
+
+fidobj=document.getElementById('fid');
+fidobj.onsubmit=function(){
+	r=confirm('您确认提交表单吗？');
+	if(!r){
+		return false;
+	}
+}
+fidobj.onreset=function(){
+	r=confirm('您确认取消提交数据吗？');
+	if(!r){
+		return false;
+	}
+}
+</script>
+</html>

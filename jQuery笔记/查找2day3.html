@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+.error {
+	color: #f00;
+	font-weight: bold;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+	<h2>ffffffffffffffffffff</h2>
+	<h2>fffffffffffffffffffff</h2>
+	<h2>78rt;klfkaskfklaslf</h2>
+	<div class="div1">
+		<h1>aaaaaaaaaaaaaaaaaaaaaaa</h1>
+		<h1>aaaaaaaaaaaaaaaaaaaaaaaa</h1>
+		<div class="div2">
+			<h1>bbbbbbbbbbbbbbbbbbbbbb</h1>
+			<h1>bbbbbbbbbbbbbbbbbbbbb</h1>
+		</div>
+	</div>
+	<h1>cccccccccccccccccccccccccccccccc</h1>
+	<h1>cccccccccccccccccccccccccccccc</h1>
+	<h1>cccccccccccccccccccccccccccc</h1>
+	<h1>9999999999999999999999999</h1>
+</body>
+<script>
+//$('.div1').children('h1').css({'color':'#00f'});
+//$('.div1').find('h1').css({'color':'#00f'});
+//$('.div1').next().css({'color':'#00f'});
+//$('.div1').nextAll().css({'color':'#00f'});
+//$('.div1').prevAll().css({'color':'#00f'});
+$('.div1').siblings().css({'color':'#00f'});
+</script>
+</html>

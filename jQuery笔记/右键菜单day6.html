@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+*{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	width: 100px;
+	height: 150px;
+	background: #ccc;
+	border-radius: 10px;
+	position: absolute;
+	display: none;
+	list-style: none;
+}
+ul li{
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	line-height: 25px;
+}
+</style>
+</head>
+
+<body>
+	<ul>
+		<li>第一菜单</li>
+		<li>第一菜单</li>		
+		<li>第一菜单</li>
+		<li>第一菜单</li>
+		<li>第一菜单</li>
+	</ul>	
+</body>
+<script>
+$(document).contextmenu(
+	function(event){
+		x=event.clientX;
+		y=event.clientY;
+		btn=event.button;
+		if(btn==2){
+			$('ul').show().css({'left':x+'px','top':y+'px'});
+			return false;
+		}
+	}
+);
+</script>
+</html>

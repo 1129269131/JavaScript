@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{margin:0;padding:0;}
+/*	input[type=]*/
+</style>
+<link rel='stylesheet' href='1366.css' id='cssid'>
+<script>
+	sw=screen.width;
+	cssidobj=document.getElementById('cssid');
+	switch(sw){
+		case 1024:
+		cssidobj.href='1024.css';
+		break;
+		case 1366:
+		cssidobj.href='1366.css';
+		break;
+	}
+</script>
+</head>
+
+<body>
+<h1 id='hid'>aaaaaaaaaaaaaaaaa</h1>
+<h1 class='hcls'>aaaaaaaaaaaaaaaaa</h1>
+<h1 class='hcls'>aaaaaaaaaaaaaaaaa</h1>
+<p><input type='text' name='username'/></p>
+</body>
+<script>
+document.body.style.background='#f0f';
+document.documentElement.style.background='#f0f';
+hidobj=document.getElementById('hid');
+hidobj.style.background='#f00';
+hidobjs=document.getElementsByClassName('hcls');
+hidobjs=document.getElementsByTagName('h1');
+for(i=0;i<hidobjs.length;i++){
+hidobjs[i].style.background='#0f0';
+}
+//不常用的document.getElementsByName(input系列,a标签有name属性)
+username=document.getElementsByName('username');
+alert(username);//NodeList节点列表
+</script>
+</html>

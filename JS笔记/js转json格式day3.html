@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+	<div>
+		<img src='a1.png' id='dogid'>
+	</div>
+</body>
+<script>
+	v="{'username':'username','age':'20'}";
+	obj=eval('('+v+')');//加()使其变成独立单元，使eval()方法可以执行
+	alert(obj.username);
+	//特殊运算符
+	p='abc';
+	var p ='abc';//delete删除不掉局部变量
+	delete p;
+	alert(p);
+	ep={'username':'username','age':'10'};
+	alert('username' in ep);//判断一个属性是否是一个对象的
+	arr=['1','2','3'];
+	alert(3 in arr);//数组的属性为其下标
+	alert(2 in arr);
+</script>
+</html>

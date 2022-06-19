@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+	<script type="text/javascript">
+		i=0;
+		
+		while(i<3){
+			document.write('<h1>'+i+'</h1>');
+			i++;
+		}
+		for(t=0;t<3;t++){
+			document.write('<h3>'+t+'</h3>');
+		}
+		obj={'username':'user1','age':'25','sex':'man'};
+		for(i in obj){//将obj对象中的第一个属性赋给i变量
+			document.write('<h1>'+i+':'+obj[i]+'</h1>');//obj为对象，因为JS不予许属性用变量来表示，所以obj.i不成立，只能用obj[i]来，但它不是数组
+		}
+	</script>
+</body>
+<script>
+	score=90;
+	if(score>=60){
+		alert('及格!');
+	}else{
+		alert('不及格!');
+	}
+	week=5;
+	switch(week){
+		case 1:
+			alert('周一');
+			break;
+		case 2:
+			alert('周二');
+			break;
+		case 3:
+			alert('周三');
+			break;
+		case 4:
+			alert('周四');
+			break;
+		case 5:
+			alert('周五');
+			break;
+		case 6:
+			alert('周六');
+			break;
+		default:
+			alert('周日');
+			break;
+	}
+	function add(n=59){
+		alert(n+5);
+	}
+	add(5);
+	add();
+</script>
+</html>

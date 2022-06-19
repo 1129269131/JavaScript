@@ -1,0 +1,32 @@
+1、通过命令创建packageJSON.txt
+03. 尚硅谷_JS模块化规范_commonjs基于服务器端(node)应用 15分钟左右
+1、当前文件夹cmd
+2、输入npm init
+3、重写包名(小写)
+4、一顿回车
+
+2、下载第三方模块 uniq:
+03. 尚硅谷_JS模块化规范_commonjs基于服务器端(node)应用 20分钟左右
+文件目录命令行下 ---> npm install uniq
+
+3、下载browserify(全局的电脑装过一次就可以了)
+04. 尚硅谷_JS模块化规范_commonjs基于浏览器端应用
+  * 全局: npm install browserify -g 
+  * 局部: npm install browserify --save-dev
+  * --save:表示局部安装，把依赖写入进去
+  * -dev: 表示开发(develop),下载开发依赖的包（只在开发的环境下使用它）
+  * 开发依赖:只在开发的环境下使用它
+  * 运行依赖: 线上环境跑的时候(又叫生产环境)
+  
+4、打包处理js:
+  * browserify js/src/app.js -o js/dist/bundle.js 
+  * -o: output -o左边：要找的目标文件、源文件 -o右边：用完了，输出的文件路径和文件名字
+  
+补充：使用打包处理js(browserify js/src/app.js -o js/dist/bundle.js )命令之前必须下载好：
+		a、全局: npm install browserify -g
+		b、局部: npm install browserify --save-dev
+		c、通过命令创建packageJSON.txt
+			1、当前文件夹cmd
+			2、输入npm init
+			3、重写包名(小写)
+			4、一顿回车

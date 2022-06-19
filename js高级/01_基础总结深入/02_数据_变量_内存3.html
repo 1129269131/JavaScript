@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--05.尚硅谷_JS高级_相关问题1-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_关于引用变量赋值问题</title>
+</head>
+<body>
+<!--
+关于引用变量赋值问题
+  * 2个引用变量指向同一个对象, 通过一个变量修改对象内部数据, 另一个变量看到的是修改之后的数据
+  * 2个引用变量指向同一个对象, 让其中一个引用变量指向另一个对象, 另一引用变量依然指向前一个对象
+-->
+<script type="text/javascript">
+  var obj1 = {name: 'Tom'}
+  var obj2 = obj1
+  obj2.age = 12
+  console.log(obj1.age)  // 12
+  function fn (obj) {//此时有三个变量指向堆内存中的{name: 'Tom'}对象(obj1,obj2,obj)
+    obj.name = 'A'
+  }
+  fn(obj1)
+  console.log(obj2.name) //A
+
+
+  var a = {age: 12}
+  var b = a
+  a = {name: 'BOB', age: 13}
+  b.age = 14
+  console.log(b.age, a.name, a.age) // 14 Bob 13
+
+  function fn2 (obj) {//执行时相当于obj=a,obj获得a的内存内容
+    obj = {age: 15}
+  }
+  fn2(a)
+	//函数执行完局部变量obj自动释放,{age: 15}成垃圾对象
+  console.log(a.age)
+
+	//补充
+	function fn3 (obj) {
+    obj = {age: 15}
+    return obj
+  }
+  a = fn3(a)
+  console.log(a.age)
+
+
+
+</script>
+</body>
+</html>

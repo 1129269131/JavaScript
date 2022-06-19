@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+.error {
+	color: #f00;
+	font-weight: bold;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+	<div>
+		<div>
+			<div>
+				<h1>aaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+				<p>aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+				<h1>bbbbbbbbbbbbbbbbbbbbbbbbbbb</h1>
+				<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div>
+		<div>
+			<button>按钮</button>
+		</div>
+	</div>
+</body>
+<script>
+$('button').click(
+	function(){
+		$(this).parent().parent().prev().prev().children().children().children('h1').css({'color':'#f00'});
+	}
+);
+</script>
+</html>

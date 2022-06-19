@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	#imgid{
+		cursor: pointer;
+		position: absolute;
+	}
+</style>
+</head>
+
+<body>
+<!--<img src='a1.png' alt='' id='imgid'/>-->
+<!--<img src='a1.png' alt='' onclick="this.src='a2.png';alert('889');"/>-->
+<form action=''>
+	<p>用户名</p>
+	<p><input type='text'/></p>
+	<p>密码:</p>
+	<p><input type='text'/></p>
+	<p>验证码:</p>
+	<p><input type='text' id='verify'/></p>
+	<p><input type='submit' value='ok'/></p>
+</form>
+</body>
+<script>
+//imgobj=document.getElementById('imgid');
+//imgobj.onclick=function(){
+//	imgobj.src='a2.png';
+//	imgobj.style.background='#f00';
+//	imgobj.style.borderRadius='256px';//JS用驼峰式写法
+//}
+//document.onmousemove=function(event){
+//	x=event.clientX;
+//	y=event.clientY;
+//	document.title=x+'-'+y;
+//}
+//xs=0;
+//xv=10;
+//
+//ys=0;
+//yv=10;
+//document.onkeydown=function(event){
+//	kc=event.keyCode;
+//	document.title=kc;
+//	switch(kc){
+//		case 37:
+//			xs-=xv;
+//			imgobj.style.left=xs+'px';
+//		break;
+//		case 38:
+//			ys-=yv;
+//			imgobj.style.top=ys+'px';
+//		break;
+//		case 39:
+//			xs+=xv;
+//			imgobj.style.left=xs+'px';
+//		break;
+//		case 40:
+//		ys+=yv;
+//			imgobj.style.top=ys+'px';
+//		break;
+//	}
+//}
+vobj=document.getElementById('verify');
+vobj.onkeyup=function(){
+	val=this.value;
+	val2=val.toUpperCase();
+	this.value=val2;
+}
+</script>
+</html>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 200px;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+		font-size: 30px;
+	}
+</style>
+</head>
+
+<body>
+<div id="" class="clock">
+	<span id="sid">
+		
+	</span>
+	<br/>
+	<button id='bid1'>停止</button>
+	<button id='bid2'>开始</button>
+</div>
+</body>
+<script>
+function getDate(){
+dobj=new Date();
+year=dobj.getFullYear();
+month=dobj.getMonth()+1;
+day=dobj.getDate();
+hour=dobj.getHours();
+if(hour<10){
+	hour='0'+hour;
+}
+minute=dobj.getMinutes();
+if(minute<10){
+	minute='0'+minute;
+}
+second=dobj.getSeconds();
+if(second<10){
+	second='0'+second;
+}
+str=year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second;
+sidobj=document.getElementById('sid');
+sidobj.innerHTML=str;
+}
+getDate();
+//setInterval(function(){
+//	getDate();
+//},1000);
+//或者
+ sobj = setInterval(getDate,1000);
+bid1obj=document.getElementById('bid1');
+bid2obj=document.getElementById('bid2');
+bid1obj.onclick=function(){
+	clearInterval(sobj);
+}
+bid2obj.onclick=function(){
+	getDate();
+	sobj=setInterval(getDate,1000);
+}
+</script>
+</html>

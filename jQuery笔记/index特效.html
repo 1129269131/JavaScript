@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>框架</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+	.menu{
+		height: 50px;
+		background: #272822;
+		line-height:  50px;
+		
+	}
+	.menu a {
+		color: #fff;
+		margin-left: 15px;
+		font-size: 20px;
+		text-decoration: none;
+	}
+	.info{
+		height: 200px;
+		background: #ccc;
+		color: #fff;
+		overflow: hidden;
+		padding: 15px;
+	}
+	.info p{
+		display: none;
+	}
+	.info p:first-child{
+		display: block;
+	}
+</style>
+</head>
+
+<body>
+<div class='menu'>
+	<a href="">linux</a>
+	<a href="">php</a>
+	<a href="">javascript</a>
+</div>
+
+<div class="info">
+<p>linux一直以来很多人使用Dreamweaver来写css和xhtml。同时如果是应用于一个多人开发的项目的时候大家会使用svn或 cvs来做版本控制的工作。但是可惜的是没有听说 Dreamweaver可以与版本控制连用。所以以前都是在外部的文件夹中用 tortoiseSVN进行版本的更新。感觉很不方便。
+　　这两天在Dreamweaver练习JavaScript的时候，创建了一个站点， 偶然间的发现，在右键文档时，突然看到了版本控制。让人惊喜若狂。
+</p>
+<p>php一直以来很多人使用Dreamweaver来写css和xhtml。同时如果是应用于一个多人开发的项目的时候大家会使用svn或 cvs来做版本控制的工作。但是可惜的是没有听说 Dreamweaver可以与版本控制连用。所以以前都是在外部的文件夹中用 tortoiseSVN进行版本的更新。感觉很不方便。
+　　这两天在Dreamweaver练习JavaScript的时候，创建了一个站点， 偶然间的发现，在右键文档时，突然看到了版本控制。让人惊喜若狂。
+</p>
+<p>javascript一直以来很多人使用Dreamweaver来写css和xhtml。同时如果是应用于一个多人开发的项目的时候大家会使用svn或 cvs来做版本控制的工作。但是可惜的是没有听说 Dreamweaver可以与版本控制连用。所以以前都是在外部的文件夹中用 tortoiseSVN进行版本的更新。感觉很不方便。
+　　这两天在Dreamweaver练习JavaScript的时候，创建了一个站点， 偶然间的发现，在右键文档时，突然看到了版本控制。让人惊喜若狂。
+</p>
+</div>
+</body>
+<script>
+$(".menu a").mouseenter(function(){
+	idx = $(this).index(".menu a");
+	$(".info p").eq(idx).show();
+	$(".info p").not($(".info p").eq(idx)).hide();
+});
+</script>
+</html>

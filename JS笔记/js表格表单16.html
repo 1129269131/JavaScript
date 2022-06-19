@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	*{margin:0;padding:0;}
+select{
+	width:100px;
+	height: 100px;
+}
+</style>
+<link rel='stylesheet' href='1366.css' id='cssid'>
+</head>
+
+<body>
+<table width='700px' border='1px' cellspacing='0' id='tid'>
+	<tr>
+		<td>111</td>
+		<td>111</td>
+		<td>111</td>
+	</tr>
+	<tr>
+		<td>111</td>
+		<td>111</td>
+		<td>111</td>
+	</tr>
+	<tr>
+		<td>111</td>
+		<td>111</td>
+		<td>111</td>
+	</tr>
+	<tr>
+		<td>111</td>
+		<td>111</td>
+		<td>111</td>
+	</tr>
+</table>
+<form action='javascript:'>
+	<p>第<input type='text' id='row'/>行!</p>
+	<p>第<input type='text' id='col'/>列!</p>
+	<p><input type='button' id='commit' value='修改'/></p>
+</form>
+
+<form action='javascript:'>
+	<p>选择城市:</p>
+	<p>
+		<select name='' id='sid'>
+			<option value='选择城市'>选择城市</option>
+			<option value='北京' order='1'>北京</option>			
+			<option value='上海' order='5'>上海</option>			
+			<option value='太原' order='20'>太原</option>
+			
+		</select>
+	</p>
+	<p><input type='button' value='ok' id='btn'/></p>
+</form>
+<h1>0000001</h1>
+<h1>0000002</h1>
+<h1>0000003</h1>
+<h1>0000004</h1>
+<h1>0000005</h1>
+<h2>linux</h2>
+<div>linux is very much linux is very much linux is very much linux is very muchlinux is very much</div>
+<h2>linux</h2>
+<div>linux is very much linux is very much linux is very much linux is very muchlinux is very much</div>
+<h2>linux</h2>
+<div>linux is very much linux is very much linux is very much linux is very muchlinux is very much</div>
+
+<br/>
+<br/>
+<form action=''>
+	<p>选择爱好:</p>
+	<p>
+		<label>
+			<input type='checkbox' name='' id='' class='play'/>踢足球
+		</label>
+	</p>
+	<p>
+		<label>
+			<input type='checkbox' name='' id='' class='play'/>打篮球
+		</label>
+	</p>
+	<p>
+		<label>
+			<input type='checkbox' name='' id='' class='play'/>踢足球
+		</label>
+	</p>
+	<p>
+		<label>
+			<input type='checkbox' name='' id='' class='play'/>打篮球
+		</label>
+	</p>
+</form>
+<p>
+	<button id='all'>全选</button>
+	<button id='notall'>全不选</button>	
+	<button id='unall'>反选</button>	
+</p>
+<br/>
+<br/>
+<form action='javascript:'>
+	<select name='' id='s1' size='2'>
+		<option value=''>--选择水果--</option>
+		<option value=''>西瓜</option>		
+		<option value=''>苹果</option>
+		<option value=''>石榴</option>
+		<option value=''>哈密瓜</option>		
+	</select>
+	<input type='button' value='>>' id='btn2'/>
+	<select name='' id='s2' size='2'>
+	</select>
+</form>
+</body>
+<script>
+tidobj=document.getElementById('tid');
+rowobj=document.getElementById('row');
+colobj=document.getElementById('col');
+commitobj=document.getElementById('commit');
+commitobj.onclick=function(){
+	rowval=rowobj.value;
+	colval=colobj.value;
+	set(rowval,colval);
+}
+function set(i,j){
+	tidobj.rows[i-1].cells[j-1].innerHTML='abc';	
+}
+
+btnobj=document.getElementById('btn');
+sidobj=document.getElementById('sid');
+btnobj.onclick=function(){
+	alert(sidobj.value);
+}
+btnobj.onclick=function(){
+	idx=sidobj.selectedIndex;
+	opts=sidobj.options;
+	alert('城市排名:'+opts[idx].getAttribute('order'));
+}
+
+objs=document.getElementsByTagName('h1');
+for(i=0;i<objs.length;i++){
+	objs[i].onmouseenter=function(){
+		this.style.background='#ccc';
+	}
+	objs[i].onmouseleave=function(){
+		this.style.background='#fff';
+	}
+}
+for(i=0;i<objs.length;i++){
+	objs[i].setAttribute('num',i+1);
+	objs[i].onclick=function(){
+		this.innerHTML=this.getAttribute('num');
+	}
+}
+
+objs2=document.getElementsByTagName('h2');
+ps=document.getElementsByTagName('div');
+for(i=0;i<objs2.length;i++){
+	objs2[i].setAttribute('line',i);
+	objs2[i].setAttribute('num',0);
+	ps[i].id=i;
+
+	objs2[i].onclick=function(){
+		num=parseInt(this.getAttribute('num'));
+		line=this.getAttribute('line');
+		psobj=document.getElementById(line);
+		if(num%2==0){
+			psobj.style.display='none';
+		}else{
+			psobj.style.display='block';
+		}
+		this.setAttribute('num',num+1);
+	}
+}
+
+
+
+all=document.getElementById('all');
+notall=document.getElementById('notall');
+unall=document.getElementById('unall');
+objs3=document.getElementsByClassName('play');
+all.onclick=function(){
+	for(i=0;i<objs3.length;i++){
+		objs3[i].checked=true;
+	}
+}
+notall.onclick=function(){
+	for(i=0;i<objs3.length;i++){
+		objs3[i].checked=false;
+	}
+}
+unall.onclick=function(){
+	for(i=0;i<objs3.length;i++){
+//		objs3[i].checked=objs3[i].checked?false:true;
+		objs3[i].checked=!objs3[i].checked;
+	}
+}
+
+
+
+btn2=document.getElementById('btn2');
+s1=document.getElementById('s1');
+s2=document.getElementById('s2');
+opts=s1.options;
+btn2.onclick=function(){
+	idx=s1.selectedIndex;
+//	s2.add(opts[idx]);//每个下拉菜单都有的方法add();
+	s2.innerHTML+=opts[idx].outerHTML;
+}
+</script>
+</html>

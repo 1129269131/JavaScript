@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+.shop{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	box-shadow: 0 0 5px 5px #ccc;
+	margin-left: 40px;
+	margin-top: 10px;
+	float: left;
+}
+.main{
+	width: 1000px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+	box-shadow: 0 0 5px 5px;
+}
+.img{
+	position: absolute;
+	border: 10px solid #ccc;
+	border-radius: 256px;
+	overflow: hidden;
+	width: 200px;
+	height: 200px;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="img">
+		<img src="a2.png" alt=""/>
+	</div>
+	<div class="shop">
+		<img src="a1.png" alt=""/>
+	</div>
+	<div class="shop">
+		<img src="a1.png" alt=""/>
+	</div>
+	<div class="shop">
+		<img src="a1.png" alt=""/>
+	</div>
+	<div class="shop">
+		<img src="a1.png" alt=""/>
+	</div>
+	</div>
+</body>
+<script>
+$('.shop').mouseenter(
+	function(){
+		x=$(this).position().left+40;//加margin-left
+		y=$(this).position().top+200+10;//加本身高+margin-top
+		$('.img').show().css({'top':y+'px','left':x+'px'});
+	}
+);
+</script>
+</html>

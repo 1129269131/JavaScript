@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+</style>
+</head>
+
+<body>
+<div id="" class="clock">
+	<span id="sid">
+		提交成功，<span id='pid'>3</span>秒后跳转
+	</span>
+	<button id='bid'>立即停止</button>
+</div>
+</body>
+<script>
+str='linux p\np and paaaaaap and p_p is and\nlinox and pp and p2p and\nlinpx and linpx p22p p-p and li and LIBUX pHp linx lin x and 2 and 3 and 10 and96 linax and PHP and AD and linu php and lamp and LINUX and linxx and linux ppp';
+arr=str.match(/p\wp/ig);//\w表示任意一个字母、数字或下划线
+arr=str.match(/p.p/ig);//点代表任意一个字符，除了换行符
+arr=str.match(/p\Wp/ig);
+arr=str.match(/p\dp/ig);
+arr=str.match(/p\Dp/ig);
+arr=str.match(/p\sp/ig);
+arr=str.match(/\bp.p\b/ig);//单词边界
+arr=str.match(/p.?/ig);//有任意一个字符或者没有字符
+arr=str.match(/p\np/ig);
+arr=str.match(/pa+p/ig);
+arr=str.match(/pa*p/ig);
+arr=str.match(/p.{1,3}?p/ig);//{1,}代表1个及以上
+arr=str.match(/p.p$/ig);//行末
+arr=str.match(/^lin.x/ig);//行首
+arr=str.match(/p.p(?= is)/ig);
+arr=str.match(/p.p(?! is)/ig);
+arr=str.match(/^lin.x/igm);//匹配多行
+alert(arr);
+</script>
+</html>

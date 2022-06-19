@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+</head>
+
+<body>
+	<div>
+		<script type="text/javascript">
+			document.write('<h2>9999</h2>');
+		</script>
+		<img src='a1.png' id='dogid'>
+	</div>
+</body>
+<script>
+	dogobj=document.getElementById('dogid');
+	dogobj.onclick=function(){
+		alert('56');
+		alert(dogobj.src);
+		alert(dogobj.id);
+	}
+	//JS输出变量的两种方法
+	alert('89');
+	//调用document对象的write方法
+	document.write('<h1>my name is name</h1>');	
+</script>
+</html>

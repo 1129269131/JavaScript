@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--25.尚硅谷_JS高级_面试题-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05_面试题</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<div style=""></div>
+<script type="text/javascript">
+	
+  /*
+   测试题2:
+   */
+  if (!(b in window)) {//命名空间污染b变为函数
+    var b = 1
+  }
+  console.log(b) // 1
+
+  var c = 1
+  function b(c) {
+    console.log(c)
+    var c = 3
+  }
+  b(2) // 报错 命名空间污染，此时b在19行执行之后变成变量，故不能作为函数执行
+
+/*相当于:
+   var b
+   var c
+   function b(c) {
+ 	  var c
+    console.log(c)
+    c = 3
+  }
+ 	if (!(b in window)) {//命名空间污染b变为函数
+    b = 1//执行该行b又变为window属性
+  }
+  console.log(b)
+  
+  c = 1
+  b(2) 
+ * */
+</script>
+</body>
+</html>

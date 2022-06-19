@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+.error {
+	color: #f00;
+	font-weight: bold;
+	display: none;
+}
+</style>
+</head>
+
+<body>
+	<h1>00001</h1>
+	<h1>00002</h1>
+	<hr>
+	<p>0003</p>
+	<p>0004</p>
+	
+	<hr>
+		
+	<div>
+		<h2>aaaaaaaaaaaaaaaaaaaaa</h2>
+		<h2>aaaaaaaaaaaaaaaaaaaaa</h2>
+	</div>
+	<h2>bbbbbbbbbbbbbbbbbbbbbbbb</h2>
+</body>
+<script>
+$('h1').add('p').css({'color':'#00f'});//等于$('h1,p')
+$('div').next().andSelf().css({'color':'#f00'});
+</script>
+</html>

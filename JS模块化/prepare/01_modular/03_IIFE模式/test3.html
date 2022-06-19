@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--02. 尚硅谷_JS模块化_模块进化史-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_IIFE模式</title>
+</head>
+<body>
+<script type="text/javascript" src="module3.js"></script>
+<!--小知识点： window中自带name属性-->
+<script type="text/javascript">
+  myModule.foo()
+  myModule.bar()
+  //myModule.otherFun()  //myModule.otherFun is not a function
+  console.log(myModule.data) //undefined 不能访问模块内部数据
+  myModule.data = 'xxxx' //不是修改的模块内部的data
+  myModule.foo() //没有改变
+
+</script>
+</body>
+</html>

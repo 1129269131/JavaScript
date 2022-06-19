@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+</style>
+</head>
+
+<body>
+<div id="" class="clock">
+	<span id="sid">
+		提交成功，<span id='pid'>3</span>秒后跳转
+	</span>
+	<button id='bid'>立即停止</button>
+</div>
+</body>
+<script>
+/*
+ *改变原数组的几种方法:
+ * 1.splice
+ * 2.pop
+ * 3.push
+ * 4.shift
+ * 5.unshift
+ * 6.sort
+ * */
+arr=['linux','php','java'];
+str=arr.join('-');
+alert(str);
+alert(arr);
+str=arr.pop();
+alert(arr);
+alert(str);
+str2=arr.shift();
+alert(str2);
+alert(arr);
+str3=arr.push('html5');
+alert(str3);
+alert(arr);
+str4=arr.unshift('jspp');
+alert(str4);
+alert(arr);
+str5=arr.reverse();
+alert(str5);
+arr2=['连接两个数组'];
+str6=arr.concat(arr2);
+alert(str6);
+arr6=[100,200,300,8,96];
+arr6.sort(asc);
+function asc(a,b){
+	return a-b;
+}
+function desc(a,b){
+	return b-a;
+}
+alert(arr6);
+arr9=arr6.slice(1,4);//slice(start,end);
+arr9=arr6.splice(1,2);//从1开始截2个
+alert(arr9);
+alert(arr6);
+</script>
+</html>

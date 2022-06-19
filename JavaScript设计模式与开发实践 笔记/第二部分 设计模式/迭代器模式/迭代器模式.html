@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>迭代器模式</title>
+		<!--
+			概念：循环访问聚合对象中的每个元素
+		-->
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var each = function(ary, callback){
+			for (var i = 0, l = ary.length;i < l; i++) {
+				callback.call(ary[i], i, ary[i])
+			}
+		}
+		
+		each([1, 2, 3], function(i, n){
+			alert([i, n])
+		})
+	</script>
+</html>

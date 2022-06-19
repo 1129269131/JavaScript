@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	#pid{
+		display: none;
+	}
+/*	input[type=]*/
+</style>
+<link rel='stylesheet' href='1366.css' id='cssid'>
+<script>
+	sw=screen.width;
+	cssidobj=document.getElementById('cssid');
+	switch(sw){
+		case 1024:
+		cssidobj.href='1024.css';
+		break;
+		case 1366:
+		cssidobj.href='1366.css';
+		break;
+	}
+</script>
+</head>
+
+<body>
+<h1>第一个页面</h1>
+<div class='main'>
+	<a href='jsBOM对象历史214.html' id='aid'>第二个页面</a>
+</div>
+<script>
+	dobj=new Date();
+	hour=dobj.getHours();
+	minute=dobj.getMinutes();
+	second=dobj.getSeconds();
+	str=hour+':'+minute+':'+second;
+	document.write('<h1>'+str+'</h1>');
+	
+</script>
+<p><a href='javascript:' id='bid'>刷新</a></p>
+</body>
+<script>
+nav=navigator.userAgent;
+ntype=nav.match(/chrome|firefox|trident/i);
+switch(ntype[0]){
+	case 'Chrome':
+	document.body.style.background='#f00';
+	break;
+	case 'Firefox':
+	document.body.style.background='#0f0';
+	break;
+	case 'Trident':
+	document.body.style.background='#00f';
+	break;
+}
+temp=screen.width;
+temp2=screen.height;
+alert(temp);
+alert(temp2);
+temp3=screen.availWidth;
+temp4=screen.availHeight;
+alert(temp3);
+alert(temp4);
+
+alert(location);//等于alert(location.href);
+//location.href='http://www.baidu.com';
+alert(location.hash);//在地址栏写上#top 获取url中的锚点
+alert(location.host);//获取主机部分
+alert(location.pathname);//获取路径
+alert(location.protocol);//获取协议
+alert(location.search);//获取URL参数  在地址栏写上?username=user1
+bidobj=document.getElementById('bid');
+bidobj.onclick=function(){
+	location.reload();//刷新页面
+}
+</script>
+</html>

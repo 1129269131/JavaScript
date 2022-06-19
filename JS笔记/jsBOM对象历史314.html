@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	#pid{
+		display: none;
+	}
+/*	input[type=]*/
+</style>
+<link rel='stylesheet' href='1366.css' id='cssid'>
+<script>
+	
+</script>
+</head>
+
+<body>
+<h1>第二个页面</h1>
+<div class='main'>
+	<a href='javascript:' id='aid'>返回上一页</a>
+	<br>
+	<a href='javascript:' id='aid2'>返回上两页</a>
+	
+</div>
+</body>
+<script>
+aidobj=document.getElementById('aid');
+aidobj.onclick=function(){
+//	history.back();
+history.go(-1);
+}
+aidobj2=document.getElementById('aid2');
+aidobj2.onclick=function(){
+//	history.back();
+history.go(-2);
+}
+</script>
+</html>

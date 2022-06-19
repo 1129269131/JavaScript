@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+	
+</body>
+<script type="text/javascript">
+	v='88';
+	v=10;
+	v=10.2;
+	v=true;
+	v=new Object();
+	v={};
+	v=null;
+	v=NaN;
+	v=undefined;
+	v=['1','2']
+	alert(typeof(v));
+	temp=[1,2,3];
+	alert(temp instanceof Array);
+	//强制转整型
+	str='10abc';
+	alert(parseInt(str)+10);//Number()转整型能力有限，不能转abc
+	//x强制转浮点型
+	str='10.5abc';
+	alert(parseFloat(str)+10);
+	//转字符串
+	str=10;
+	alert(String(str)+5);
+	//转布尔类型
+	str=-10;
+	alert(Boolean(str)+5);//有字符串往字符串转，然后是整型
+	//eval执行字符串表达式
+	b='a=1+1';
+	eval(b);//执行b=之后的字符串，此时a=2
+	alert(a);
+	alert(b);
+</script>
+</html>

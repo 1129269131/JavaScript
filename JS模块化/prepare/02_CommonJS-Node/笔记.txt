@@ -1,0 +1,10 @@
+通过命令创建packageJSON.txt
+03. 尚硅谷_JS模块化规范_commonjs基于服务器端(node)应用 15分钟左右
+1、当前文件夹cmd
+2、输入npm init
+3、重写包名(小写)
+4、一顿回车
+
+下载第三方模块 uniq:
+03. 尚硅谷_JS模块化规范_commonjs基于服务器端(node)应用 20分钟左右
+文件目录命令行下 ---> npm install uniq

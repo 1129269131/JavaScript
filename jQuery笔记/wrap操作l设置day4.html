@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+div{
+	height: 250px;
+	background: #ccc;
+}
+</style>
+</head>
+
+<body>
+	<p>00000001</p>
+	<p>00000002</p>	
+	<p>00000003</p>	
+	<p>00000004</p>
+	<div>
+		<img src="a1.png" alt=""/>
+	</div>
+</body>
+<script>
+//$('p').wrap('<i></i>');
+//$('p').wrapInner('<i></i>');
+//$('p').wrapAll('<i></i>');
+//$('p').replaceWith('<h1>linux</h1>');
+//$('<h1>linux</h1>').replaceAll('p');
+//$('p').click(
+//	function(){
+//		val = $(this).html();
+//		$(this).replaceWith('<h1>'+val+'</h1>');
+//	}
+//);
+//$('p').click(
+//	function(){
+//		$(this).empty();
+//	}
+//);
+//$('p').click(
+//	function(){
+//		obj=$(this).remove();
+//		$('body').append(obj);
+//	}
+//);
+//$('p').click(
+//	function(){
+//		obj=$(this).detach();
+//		$('body').append(obj);
+//	}
+//);
+//$('img').click(
+//	function(){
+//		$(this).after($(this).clone());
+//	}
+//);
+$('img').click(
+	function(){
+		$(this).after($(this).clone(true));
+	}
+);
+</script>
+</html>

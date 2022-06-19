@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>惰性单例</title>
+		<!--
+			概念：保证一个类仅有一个实例
+		-->
+	</head>
+	<body>
+		<button id="loginBtn">登录</button>
+	</body>
+	<script type="text/javascript">
+			var getSingle = function(fn){ // 管理单例的职责
+				var result
+				return function(){
+					return result || (result = fn.apply(this, arguments))
+				}
+			}
+			
+			var createLoginLayer = function(){ // 创建对象的职责
+				var div = document.createElement('div')
+				div.innerHTML = '我是登录浮窗'
+				div.style.display = 'none'
+				document.body.appendChild(div)
+				return div
+			}
+			
+			var reateSingleLoginLayer = getSingle(createLoginLayer)
+			
+			document.getElementById('loginBtn').onclick = function(){
+				var loginLayer = reateSingleLoginLayer()
+				loginLayer.style.display = 'block'
+			}
+		</script>
+</html>

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	#pid{
+		display: none;
+	}
+/*	input[type=]*/
+</style>
+</head>
+
+<body>
+<form id='fid' action='h1.php'><!--action='javascript:'很少用-->
+<p><input type='text' id='tid'/></p>
+<p><input type='file' id='pid'/></p>
+<p><img src='a1.png' id='up'/></p>
+<p><input type='submit' value='ok'/></p>
+</form>
+<p>9999999999999999999999999999999999999999999</p>
+<h1>提交表单</h1>
+<button id='submit'>OK</button>
+<button id='reset'>Cancel</button>
+<a href='javascript:' id='aid'>百度</a>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+
+<h1>99999999999999</h1>
+<h1>99999999999999</h1>
+</body>
+<script>
+tidobj=document.getElementById('tid');
+tidobj.focus();
+tidobj.onkeydown=function(event){
+	kc=event.keyCode;
+	document.title=kc;
+	if(kc==32){
+		this.blur();
+	}
+}
+upobj=document.getElementById('up');
+pobj=document.getElementById('pid');
+upobj.onclick=function(){
+	pobj.click();
+}
+pobj.onchange=function(){
+	alert(this.value);
+}
+fidobj=document.getElementById('fid');
+submitobj=document.getElementById('submit');
+resetobj=document.getElementById('reset');
+submitobj.onclick=function(){
+	fidobj.submit();
+}
+resetobj.onclick=function(){
+	fidobj.reset();
+}
+aidobj=document.getElementById('aid');
+x=2;
+aidobj.onclick=function(){
+	if(x<3){
+		alert('x<3');
+		return false;
+	}else{
+		location='http://www.baidu.com';
+	}
+}
+fidobj.onsubmit=function(){
+	if(x<3){
+		alert('x<3');
+		return false;
+	}else{
+		this.action='go.php';
+	}
+}
+
+
+tot=document.documentElement.scrollHeight;
+	hei=document.documentElement.clientHeight;
+	diff=tot-hei;
+window.onscroll=function(){
+	document.title=diff;
+	sc=document.body.scrollTop;
+	if(sc>=diff){
+		document.body.style.background='#f00';
+	}else{
+		document.body.style.background='#fff';
+		
+	}
+	
+}
+</script>
+</html>

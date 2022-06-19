@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<div class="has">
+		<h1>0001</h1>
+		<h1>0001</h1>
+	</div>
+	<div class="has">
+		<p>222222</p>
+		<p>222222</p>
+	</div>
+	
+	<h1 class="em">aaaaaaaaaaaaaaaaaaaaaa</h1>
+	<h1 class="em">bbbbbbbbbbbbbbbbbbbbbb</h1>
+	<h1 class="em"></h1>
+	<div class="pa" style="width: 100px;height: 100px;">
+		
+	</div>
+	<div class="pa">
+		<h1>aaaaaaaaaaa</h1>
+	</div>
+	<div class="pa">
+		aaaaaaaaaaa
+	</div>
+</body>
+<script>
+$(".has:has(h1)").css({"color":"#00f"});
+$(".em:not(:empty)").css({"color":"#f00"});
+$(".pa:parent").css({"color":"#0f0","background":"#f00"});
+</script>
+</html>

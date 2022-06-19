@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--30.尚硅谷_JS高级_闭包理解-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_理解闭包</title>
+</head>
+<body>
+<script type="text/javascript">
+  function fn1 () {
+    var a = 2/*此处打断点，闭包未产生*/
+    var b = 'abc'
+    var fn2 = function () { 
+      console.log(a)
+    }
+    console.log('------')/*此处打断点，闭包已产生*/
+  }
+  fn1()
+
+</script>
+</body>
+</html>

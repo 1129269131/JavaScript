@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	.clock{
+		width: 100%;
+		height: 50px;
+		background: #000;
+		color: #0f0;
+		font-weight: bold;
+		border-radius: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+</style>
+</head>
+
+<body>
+<div id="" class="clock">
+	<span id="sid">
+		提交成功，<span id='pid'>3</span>秒后跳转
+	</span>
+	<button id='bid'>立即停止</button>
+</div>
+</body>
+<script>
+str='/web/home/linux.php.home';
+str2=str.toUpperCase();
+alert(str2);
+str3='LOVE';
+str9=str3.toLowerCase();
+alert(str9);
+pos=str.search('home');//此时等同于pos=str.indexOf('home');
+pos=str.search('Home');
+pos=str.search(/HOME/i);//忽略大小写ignore
+alert(pos);
+arr=str.match(/home/g);//global全部的意思
+alert(arr);
+arr2=str.match(/Home/ig);
+alert(arr2+'忽略大小写');
+str2=str.replace('home','HOME');
+alert(str2);
+str3=str.replace(/home/ig,'HOME');
+alert(str3);
+ttp='2017-09|15';
+arr=ttp.split(/-|\|/);//\为对|的转义
+alert(arr);
+</script>
+</html>

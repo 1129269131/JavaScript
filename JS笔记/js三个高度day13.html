@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#img{
+		width: 192px;
+		height: 192px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#img img{
+		display: block;
+	}
+	.main{
+		width:1200px;
+		height:300px;
+		background:#ccc;
+		margin:0 auto;
+	}
+	.left{
+		padding:10px;
+		width: 570px;
+		height:100%;
+		background:#f00;
+		float:left;
+		border:2px dashed #000;
+	}
+	.right{
+		padding:10px;
+		width: 570px;
+		height:100%;
+		background:#00f;
+		float:right;
+		border:2px dashed #000;
+	}
+	textarea{
+		width:90%;
+	}
+	#imgdiv{
+		width:192px;
+		height:192px;
+		margin:0 auto;
+	}
+	
+	.clearfix:after {content:"\200B"; display:block; height:0; clear:both; }
+.clearfix { *zoom:1;}
+</style>	
+	
+</head>
+
+<body>
+<div style='width:1010px;height:auto;margin:0 auto;'>
+	<div style='width:1010px;height:50px;background:#f00;'></div>
+	<div class='clearfix' style='margin-top:10px'>
+		<div style='width:200px;height:100px;float:left;background:#0f0;margin-right:10px'></div>
+		<div style='width:800px;height:100px;float:left;background:#00f'></div>
+	</div>
+	<div style='width:1010px;height:20px;background:#000;margin-top:10px'></div>
+</div>
+</body>
+<script>
+uidobj=document.getElementById('uid');
+uid2obj=document.getElementById('uid2');
+tidobj=document.getElementById('tid');
+tid2obj=document.getElementById('tid2');
+uidobj.onkeyup=function(){
+	val=this.value;
+	uid2.innerHTML=val;
+}
+tidobj.onkeyup=function(){
+	val=this.value;
+	tid2.innerHTML=val;
+}
+	imgobj=document.getElementById('imgid');
+window.onscroll=function(){
+	alert('889');
+}
+//区分浏览器内核
+nu=navigator.userAgent;
+alert(nu);
+
+</script>
+</html>

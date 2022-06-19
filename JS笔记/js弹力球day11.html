@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#img{
+		width: 192px;
+		height: 192px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	#img img{
+		display: block;
+	}
+</style>	
+	
+</head>
+
+<body>
+<div id='img'>
+	<img src='a1.png'/>
+</div>
+</body>
+<script>
+//定位会脱离文档流，使没有设置高的父标签高度为0，相反的父标签会被撑开
+//给html设置红色，再给body设置蓝色，html为全部浏览器大小，浏览器为红色，只给body设置蓝色整个浏览器为蓝色，body为一个大的div角色，此时它的实际大小为它内部的东西的大小
+//HTML只有一屏幕，body的大小有时会超过它，所以html称为可视区域
+/*
+ <div><img src="**.png"/></div>超高问题？
+因为img为inline元素，有跟文字对齐现象，故有时会超出5px的高度(在底部超出5px)
+优先解决方法:img{display:block}将其设置为块标签即可
+次解决方法:div{overflow:hidden}
+来源:腾讯课堂-》云之梦-》弹力球实例 50分钟处
+ * */
+imgobj=document.getElementById('img');
+screenHeight=document.documentElement.clientHeight;//documentElement==html
+imgHeight=192;
+diffHeight=screenHeight-imgHeight;
+
+screenWidth=document.documentElement.clientWidth;//documentElement==html
+imgWidth=192;
+diffWidth=screenWidth-imgWidth;
+ys=0;
+yv=10;
+
+xs=0;
+xv=10;
+setInterval(function(){
+	//y轴
+	ys+=yv;
+	if(ys>=diffHeight){
+		ys=diffHeight;
+		yv=-yv;
+	}
+	if(ys<=0){
+		ys=0;
+		yv=-yv;
+	}
+	imgobj.style.top=ys+'px';
+	//x轴
+	xs+=xv;
+	if(xs>=diffWidth){
+		xs=diffWidth;
+		xv=-xv;
+	}
+	if(xs<=0){
+		xs=0;
+		xv=-xv;
+	}
+	imgobj.style.left=xs+'px';
+},10);
+</script>
+</html>

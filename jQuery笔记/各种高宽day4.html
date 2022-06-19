@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>层级选择器</title>
+<link type="text/css" rel="stylesheet" href="style9.css"/>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style>
+div{
+	width: 300px;
+	height: 300px;
+	background: #ccc;
+	padding: 10px;
+	border: 10px solid #f00;
+}
+</style>
+</head>
+
+<body>
+	<div>
+		<img src="a1.png" alt=""/>
+	</div>
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+	
+	<p>999</p>
+	<p>999</p>
+	
+	<p>999</p>
+	<p>999</p>
+	
+	<p>999</p>
+	
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+	
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+	<p>999</p>
+</body>
+<script>
+//$('div').click(
+//	function(){
+//		w1 = $(this).width();
+//		h1 = $(this).height();
+//		alert(w1+"|"+h1);
+//		w2 = $(this).innerWidth();
+//		h2 = $(this).innerHeight();
+//		alert(w2+"|"+h2);
+//		w3 = $(this).outerWidth();
+//		h3 = $(this).outerHeight();
+//		alert(w3+"|"+h3);
+//	}
+//);
+h=$(window).height();//可视区域高度
+w=$(window).width();//可视区域宽度
+alert(w+'|'+h);
+//h=$(document).height();//文档高度
+//w=$(document).width();//文档宽度
+//alert(w+'|'+h);
+$(window).scroll(
+	function(){
+		h=$(window).scrollTop();
+		document.title=h;
+	}
+);
+</script>
+</html>
